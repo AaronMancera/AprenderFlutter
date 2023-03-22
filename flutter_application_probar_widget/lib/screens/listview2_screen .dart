@@ -21,15 +21,17 @@ class Listview2Screen extends StatelessWidget {
           //cantidad en la lista
           itemCount: options.length,
           //crea los elementos, cada uno de los options
-          itemBuilder: (context, index) =>
-              ListTile(
-                title: Text(options[index]),
-                trailing:  const Icon(Icons.arrow_circle_right_outlined, color: Colors.teal,),
-                onTap: () {
-                  final game = options[index];
-                  print(game);
-                },
-                ),
+          itemBuilder: (context, index) => ListTile(
+            title: Text(options[index]),
+            trailing: const Icon(
+              Icons.arrow_circle_right_outlined,
+              color: Colors.teal,
+            ),
+            onTap: () {
+              final game = options[index];
+              print(game);
+            },
+          ),
           //Variables no utilizadas con _
           separatorBuilder: (_, __) => const Divider(),
         ));

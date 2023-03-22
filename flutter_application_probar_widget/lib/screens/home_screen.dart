@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_probar_widget/screens/listview1_screen.dart';
+
+import '../router/app_routes.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    final menuOptions = AppRoutes.menuOptions;
     return Scaffold(
         appBar: AppBar(
           title: const Text("Componentes en Flutter"),
@@ -13,8 +15,8 @@ class HomeScreen extends StatelessWidget {
         ),
         body: ListView.separated(
             itemBuilder: (context, index) => ListTile(
-                  leading: const Icon(Icons.arrow_circle_right),
-                  title: const Text("Nombre ruta"),
+                  leading: Icon(menuOptions[index].icon),
+                  title: Text(menuOptions[index].name),
                   onTap: () {
                     // // // Forma 1
                     // // Esta forma es mas personalizada (animaciones, formas, etc)
@@ -24,10 +26,10 @@ class HomeScreen extends StatelessWidget {
                     // // Navigator.pushReplacement(context, route);
                     // // // Forma 2
                     // // Funciona mediante los nombres que han sido introducidos a main
-                    Navigator.pushNamed(context, '/listview2');
+                    Navigator.pushNamed(context, menuOptions[index].route);
                   },
                 ),
             separatorBuilder: (_, __) => const Divider(),
-            itemCount: 10));
+            itemCount: menuOptions.length));
   }
 }

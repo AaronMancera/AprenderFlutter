@@ -23,9 +23,10 @@ class MyApp extends StatelessWidget {
       //   '/alert':(context) => const AlertScreen(),
       //   '/card':(context) => const CardScreen(),
       // },
-      routes: AppRoutes.routes,
+      // routes: AppRoutes.routes,
+      routes: AppRoutes.getAppRoutes(),
       //Para trabajar con rutas dinamicas, es decir, rutas que no estan escritas arriba, que nos devolvera a la pantalla escrita en el return
-      onGenerateRoute: (settings) => AppRoutes.onGenerateRoute(settings),
+      // onGenerateRoute: (settings) => AppRoutes.onGenerateRoute(settings),
     );
   }
 }
