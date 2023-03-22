@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_probar_widget/theme/app_theme.dart';
 
 class Listview1Screen extends StatelessWidget {
   final options = const [
@@ -23,7 +24,7 @@ class Listview1Screen extends StatelessWidget {
                 .map(
                   (game) => ListTile(
                     title: Text(game),
-                    trailing: const Icon(Icons.arrow_circle_right_outlined),
+                    trailing: const Icon(Icons.arrow_circle_right_outlined,color: AppTheme.primaryColor,),
                   ),
                 )
                 .toList(),

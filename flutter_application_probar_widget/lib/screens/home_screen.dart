@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_probar_widget/theme/app_theme.dart';
 
 import '../router/app_routes.dart';
 
@@ -15,7 +16,10 @@ class HomeScreen extends StatelessWidget {
         ),
         body: ListView.separated(
             itemBuilder: (context, index) => ListTile(
-                  leading: Icon(menuOptions[index].icon),
+                  leading: Icon(
+                    menuOptions[index].icon,
+                    color: AppTheme.primaryColor,
+                  ),
                   title: Text(menuOptions[index].name),
                   onTap: () {
                     // // // Forma 1
