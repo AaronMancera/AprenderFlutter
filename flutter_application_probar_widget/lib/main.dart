@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-//Pantallas
-//import 'package:flutter_application_probar_widget/screens/listview1_screen.dart';
-import 'package:flutter_application_probar_widget/screens/listview2_screen%20.dart';
+//Para que no haya una infinidad de import se crea un indice/libreria de importaciones llamado screens.dart
+import 'screens/screens.dart';
 
 void main() => runApp(const MyApp());
 
@@ -10,12 +9,25 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    //no es const porque se incia en tiempo de ejecucion
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Material App',
-      //vista personalizada
-      // home: Listview1Screen(),
-      home: Listview2Screen(),
+      //Sustituimos el home por un llamamiento de una de las rutas creadas
+      // home: const CardScreen(),
+      initialRoute: '/home',
+      routes:{
+        '/home':(context) => const HomeScreen(),
+        '/listview1':(context) => const Listview1Screen(),
+        '/listview2':(context) => const Listview2Screen(),
+        '/alert':(context) => const AlertScreen(),
+        '/card':(context) => const CardScreen(),
+      },
+      //Para trabajar con rutas dinamicas, es decir, rutas que no estan escritas arriba, que nos devolvera a la pantalla escrita en el return
+      onGenerateRoute: (settings) {
+        print(settings);
+        return MaterialPageRoute(builder: (context) => const AlertScreen(),);
+      },
     );
   }
 }
