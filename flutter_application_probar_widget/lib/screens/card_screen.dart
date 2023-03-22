@@ -17,15 +17,15 @@ class CardScreen extends StatelessWidget {
             SizedBox(
               height: 10,
             ),
-            CustomCardType2(),
+            CustomCardType2(imageUrl: 'https://i.pinimg.com/564x/ab/bd/58/abbd5898c2b3e3279c0dffad61c80e2a.jpg',name: 'Bocchi the rock!'),
             SizedBox(
               height: 10,
             ),
-            CustomCardType2(),
+            CustomCardType2(imageUrl: 'https://i.pinimg.com/564x/aa/9f/94/aa9f9410deebd6f6d313a62e9b5bd176.jpg',),
             SizedBox(
               height: 10,
             ),
-            CustomCardType2(),
+            CustomCardType2(imageUrl: 'https://i.pinimg.com/564x/1a/84/35/1a8435b262f70dc441a52bf15a9c620d.jpg',name: 'Ah!'),
             SizedBox(
               height: 100,
             ),
