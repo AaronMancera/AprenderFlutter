@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-//Pantallas
-//import 'package:flutter_application_probar_widget/screens/listview1_screen.dart';
-import 'package:flutter_application_probar_widget/screens/listview2_screen%20.dart';
+import 'package:flutter_application_probar_widget/router/app_routes.dart';
+import 'package:flutter_application_probar_widget/theme/app_theme.dart';
+
 
 void main() => runApp(const MyApp());
 
@@ -10,12 +10,16 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    //no es const porque se incia en tiempo de ejecucion
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Material App',
-      //vista personalizada
-      // home: Listview1Screen(),
-      home: Listview2Screen(),
+      initialRoute: AppRoutes.initialRoute,
+      routes: AppRoutes.getAppRoutes(),
+      //Para trabajar con rutas dinamicas, es decir, rutas que no estan escritas arriba, que nos devolvera a la pantalla escrita en el return
+      // onGenerateRoute: (settings) => AppRoutes.onGenerateRoute(settings),
+      //Esto cambiara el thema global de la app sin tener que ir uno a uno
+      theme: AppTheme.lightTheme,
     );
   }
 }
