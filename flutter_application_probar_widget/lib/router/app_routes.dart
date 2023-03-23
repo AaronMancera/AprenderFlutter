@@ -15,6 +15,7 @@ class AppRoutes {
     MenuOptions(route: '/card', icon: Icons.credit_card, name: 'Cards', screen: const CardScreen()),
     MenuOptions(route: '/avatar', icon: Icons.supervised_user_circle_outlined, name: 'Avatar', screen: const AvatarScreen()),
     MenuOptions(route: '/animacion', icon: Icons.play_arrow, name: 'Animated', screen: const AnimatedScreen()),
+    MenuOptions(route: '/input', icon: Icons.format_align_justify, name: 'Input', screen: const InputScreen()),
 
   ];
 

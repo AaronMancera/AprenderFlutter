@@ -33,15 +33,19 @@ class _AnimatedScreenState extends State<AnimatedScreen> {
         title: const Text('Animated Container'),
       ),
       body: Center(
+        //Realiza la animacion en la duracion correspondiente (obligatorio)
         child: AnimatedContainer(
           duration: const Duration(milliseconds: 200),
+          //el tipo de inamicaion para que no sea estatico el cambio/soso
           curve: Curves.easeInOutBack,
           width: _width,
           height: _height,
+          //para decorar el container
           decoration:
               BoxDecoration(color: _color, borderRadius: _borderRadiusGeometry),
         ),
       ),
+      //boton que cambie el container
       floatingActionButton: FloatingActionButton(
         onPressed: changeShape,
         child: const Icon(
