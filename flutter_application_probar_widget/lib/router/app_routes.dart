@@ -8,17 +8,20 @@ class AppRoutes {
   static const initialRoute = '/home';
   //Listado de menu - Implementacion de factorizacion de MenuOptions
   static final menuOptions = <MenuOptions> [
-    MenuOptions(route: '/home', icon: Icons.home, name: 'Home Screen', screen: const HomeScreen()),
+    // MenuOptions(route: '/home', icon: Icons.home, name: 'Home Screen', screen: const HomeScreen()),
     MenuOptions(route: '/listview1', icon: Icons.list_alt, name: 'List View1', screen: const Listview1Screen()),
     MenuOptions(route: '/listview2', icon: Icons.list_sharp, name: 'List View2', screen: const Listview2Screen()),
     MenuOptions(route: '/alert', icon: Icons.add_alert_rounded, name: 'Alert', screen: const AlertScreen()),
     MenuOptions(route: '/card', icon: Icons.credit_card, name: 'Cards', screen: const CardScreen()),
     MenuOptions(route: '/avatar', icon: Icons.supervised_user_circle_outlined, name: 'Avatar', screen: const AvatarScreen()),
+    MenuOptions(route: '/animacion', icon: Icons.play_arrow, name: 'Animated', screen: const AnimatedScreen()),
+
   ];
 
   //Mediante el menu options se definen las rutas
   static Map<String, Widget Function(BuildContext)> getAppRoutes(){
     Map<String,Widget Function(BuildContext)> appRoutes = {};
+    appRoutes.addAll({'/home':(BuildContext context ) =>  const HomeScreen()});
     //recorre el menu options
     for (final options in menuOptions){
       appRoutes.addAll({options.route : ( BuildContext context ) => options.screen});
