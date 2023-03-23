@@ -28,6 +28,7 @@ class AppTheme {
     dialogTheme: DialogTheme(
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(25))
     ),
+    
   );
   //DarkTheme
   static final ThemeData darkTheme = ThemeData.dark().copyWith(

@@ -13,6 +13,7 @@ class AppRoutes {
     MenuOptions(route: '/listview2', icon: Icons.list_sharp, name: 'List View2', screen: const Listview2Screen()),
     MenuOptions(route: '/alert', icon: Icons.add_alert_rounded, name: 'Alert', screen: const AlertScreen()),
     MenuOptions(route: '/card', icon: Icons.credit_card, name: 'Cards', screen: const CardScreen()),
+    MenuOptions(route: '/avatar', icon: Icons.supervised_user_circle_outlined, name: 'Avatar', screen: const AvatarScreen()),
   ];
 
   //Mediante el menu options se definen las rutas
