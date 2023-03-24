@@ -16,7 +16,9 @@ class AppRoutes {
     MenuOptions(route: '/avatar', icon: Icons.supervised_user_circle_outlined, name: 'Avatar', screen: const AvatarScreen()),
     MenuOptions(route: '/animacion', icon: Icons.play_arrow, name: 'Animated', screen: const AnimatedScreen()),
     MenuOptions(route: '/input', icon: Icons.format_align_justify, name: 'Input', screen: const InputScreen()),
-        MenuOptions(route: '/silder', icon: Icons.photo_size_select_large, name: 'Slider', screen: const SliderScreen()),
+    MenuOptions(route: '/silder', icon: Icons.photo_size_select_large, name: 'Slider', screen: const SliderScreen()),
+    MenuOptions(route: '/listviewbuilder', icon: Icons.view_agenda, name: 'InifniteScrol & Pull to refresh', screen: const ListViewBuilderScreen()),
+
 
 
   ];
