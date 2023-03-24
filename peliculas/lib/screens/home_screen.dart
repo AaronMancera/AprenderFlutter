@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:peliculas/widgets/widgets.dart';
 
 class HomeScreen extends StatelessWidget {
-   
+  
   const HomeScreen({Key? key}) : super(key: key);
   
   @override
@@ -19,11 +19,14 @@ class HomeScreen extends StatelessWidget {
           )
         ],
       ),
+      //por si sobrepasa en height que se pueda bajar
       body: SingleChildScrollView(
         child: Column(
           children: const [
             // Tarjetas principales
             CardSwiper(),
+            // Listado horizontal de peliculas
+            MovieSlider(),
             
           ],
         ),
