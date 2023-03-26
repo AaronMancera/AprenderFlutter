@@ -12,7 +12,8 @@ import 'package:peliculas/models/search_response.dart';
 
 class MoviesProvider extends ChangeNotifier {
 
-  final String _apiKey   = '1865f43a0549ca50d341dd9ab8b29f49';
+//Mi api key
+  final String _apiKey   = '0ffe29d2afe58476468dbc3c5c4d4ed2';
   final String _baseUrl  = 'api.themoviedb.org';
   final String _language = 'es-ES';
 
