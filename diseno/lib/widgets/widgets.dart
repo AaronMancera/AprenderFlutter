@@ -1,5 +1,7 @@
 export 'package:diseno/widgets/background.dart';
+export 'package:diseno/widgets/card_table.dart';
 export 'package:diseno/widgets/custom_background.dart';
+export 'package:diseno/widgets/custom_botton_navegation.dart';
 export 'package:diseno/widgets/custom_icon.dart';
 export 'package:diseno/widgets/custom_text.dart';
 export 'package:diseno/widgets/custom_title.dart';

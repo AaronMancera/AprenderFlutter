@@ -8,19 +8,25 @@ class PageTitle extends StatelessWidget {
     return SafeArea(
       bottom: false,
       child: Container(
-        margin: EdgeInsets.symmetric(horizontal: 20),
-        child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-          Text(
-            'Classify transsaction',
-            style: TextStyle(
-                fontSize: 20, fontWeight: FontWeight.bold, color: Colors.white),
-          ),
-          SizedBox(height: 10,),
-          Text(
-            'Aute sint cupidatat tempor cillum dolor in excepteur ut aliquip ad.',
-            style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-          )
-        ]),
+        margin: const EdgeInsets.symmetric(horizontal: 20),
+        child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: const [
+              Text(
+                'Classify transsaction',
+                style: TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white),
+              ),
+              SizedBox(
+                height: 10,
+              ),
+              Text(
+                'Aute sint cupidatat tempor cillum dolor in excepteur ut aliquip ad.',
+                style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+              )
+            ]),
       ),
     );
   }
