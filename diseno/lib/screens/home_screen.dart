@@ -7,16 +7,15 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: Stack(
-          children: const [
-            //Background
-            Background(),
-            //Body
-            _HomeBody(),
-          ],
-        ),
+      body: Stack(
+        children: const [
+          //Background
+          Background(),
+          //Body
+          _HomeBody(),
+        ],
       ),
+        bottomNavigationBar: const CustomBottomNavigation(),
     );
   }
 }
@@ -29,7 +28,9 @@ class _HomeBody extends StatelessWidget {
     return SingleChildScrollView(
       child: Column(children: const [
         //Titulos
-        PageTitle()
+        PageTitle(),
+        //Card Table
+        CardTable(),
       ]),
     );
   }
