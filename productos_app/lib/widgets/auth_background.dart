@@ -13,6 +13,7 @@ class AuthBackground extends StatelessWidget {
       child: Stack(children:  [
         const _PurpleBox(),
         const _HeaderIcon(),
+        //este child se insertara el widget de la card desde la pantalla
         child,
       ]),
     );
