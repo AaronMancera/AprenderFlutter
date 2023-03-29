@@ -62,7 +62,7 @@ class _LoginForm extends StatelessWidget {
 
     return Container(
       child: Form(
-        //TODO:Mantener la refrencia a la key
+        //Mantener la refrencia a la key
         key:loginForm.formKey,
         autovalidateMode: AutovalidateMode.onUserInteraction,
 
@@ -112,13 +112,18 @@ class _LoginForm extends StatelessWidget {
           ),
           //Boton
           MaterialButton(
-            onPressed: () {
-              //TODO: Login form
-              loginForm.isValidForm();
+            onPressed: loginForm.isLoading?null: () async {
+              //Login form
+              FocusScope.of(context).unfocus();
+              // loginForm.isValidForm();
               if( !loginForm.isValidForm() ){
                 return;
               }
-              Navigator.pushReplacementNamed(context, '/home');
+              loginForm.isLoading=true;
+              await Future.delayed(const Duration(seconds: 2));
+              //TODO: Validar si el login es correcto
+              loginForm.isLoading=false;
+              // Navigator.pushReplacementNamed(context, '/home');
             },
             shape:
                 RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
@@ -127,9 +132,9 @@ class _LoginForm extends StatelessWidget {
             color: Colors.deepPurple,
             child: Container(
               padding: const EdgeInsets.symmetric(horizontal: 80, vertical: 15),
-              child: const Text(
-                'Ingresar',
-                style: TextStyle(color: Colors.white),
+              child: Text(
+                loginForm.isLoading?'Espere':'Ingresar',
+                style: const TextStyle(color: Colors.white),
               ),
             ),
           )
