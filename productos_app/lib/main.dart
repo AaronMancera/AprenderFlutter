@@ -1,9 +1,28 @@
 import 'package:flutter/material.dart';
+import 'package:productos_app/services/services.dart';
+import 'package:provider/provider.dart';
 
 import 'screens/screens.dart';
 
+//Se cambia a una aplicacion que va a tener relacionado un provider
+void main() => runApp(const AppState());
 
-void main() => runApp(const MyApp());
+class AppState extends StatelessWidget {
+  const AppState({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider(
+          create: (context) => ProductsServices(),
+          // lazy: false, //provocaria que se puede cargar incluso sin logearse
+        ),
+      ],
+      child: const MyApp(),
+    );
+  }
+}
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
