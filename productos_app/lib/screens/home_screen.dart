@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:productos_app/widgets/widgets.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -10,7 +11,7 @@ class HomeScreen extends StatelessWidget {
         title: const Text('Productos'),
       ),
       body: ListView.builder(
-        itemBuilder: (context, index) => Text('Item $index'),
+        itemBuilder: (context, index) => const ProductCard(),
         itemCount: 10,
       ),
       floatingActionButton: FloatingActionButton(
