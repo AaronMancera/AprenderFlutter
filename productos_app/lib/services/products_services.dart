@@ -11,7 +11,9 @@ class ProductsServices extends ChangeNotifier {
       'flutter-varios-7c5c3-default-rtdb.europe-west1.firebasedatabase.app';
 
   final List<Product> products = [];
-  //TODO: Hacer fetch de productos
+  //este atributo lo vamos a definir cuando pulsemos un producto
+  late Product selectedProduct;
+  //Hacer fetch de productos
   bool isLoading = true;
   ProductsServices() {
     //Llama al metodo que realiza la peticion
