@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:productos_app/services/products_services.dart';
 import 'package:productos_app/ui/input_decorations.dart';
 import 'package:productos_app/widgets/widgets.dart';
@@ -35,6 +36,8 @@ class _Products extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SingleChildScrollView(
+        //Para los teclados mdel movil
+        keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
         child: Column(
           children: [
             Stack(
@@ -106,11 +109,16 @@ class _ProductForm extends StatelessWidget {
               ),
               TextFormField(
                 initialValue: '${product.price}',
+                //Expresion regular obligatoria para los precios (only numbers and only two decimals)
+                inputFormatters: [
+                  FilteringTextInputFormatter.allow(
+                      RegExp(r'^(\d+)?\.?\d{0,2}'))
+                ],
                 onChanged: (value) {
-                  if (double.tryParse(value)==null){
-                    product.price=0;
-                  } else{
-                    product.price=double.parse(value);
+                  if (double.tryParse(value) == null) {
+                    product.price = 0;
+                  } else {
+                    product.price = double.parse(value);
                   }
                 },
                 keyboardType: TextInputType.number,
@@ -122,9 +130,7 @@ class _ProductForm extends StatelessWidget {
               ),
               SwitchListTile(
                 value: product.available,
-                onChanged: (value) {
-                  //TODO: Pendiente
-                },
+                onChanged: (value) => productForm.updateAvailability(value),
                 title: const Text('Disponible'),
                 activeColor: Colors.indigo,
               ),

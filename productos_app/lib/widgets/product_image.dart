@@ -9,32 +9,38 @@ class ProductImage extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.only(left: 10, right: 10, top: 10),
       child: Container(
+        //decoracion / utilidad con la opacidad /
         decoration: _buildBoxDecoration(),
         width: double.infinity,
         height: 450,
-        child: ClipRRect(
-          borderRadius: const BorderRadius.only(
-              topLeft: Radius.circular(45), topRight: Radius.circular(45)),
-          child: url == null
-              ? const FadeInImage(
-                  placeholder: AssetImage('images/jar-loading.gif'),
-                  image: AssetImage('images/no-image.png'),
-                  //Rellena todo el hueco aunque sea la imagen de menor resolucion
-                  fit: BoxFit.cover,
-                )
-              : FadeInImage(
-                  placeholder: const AssetImage('images/jar-loading.gif'),
-                  image: NetworkImage(url!),
-                  //Rellena todo el hueco aunque sea la imagen de menor resolucion
-                  
-                  fit: BoxFit.cover,
-                ),
+        //opacidad en la foto
+        child: Opacity(
+          opacity: 0.8,
+          child: ClipRRect(
+            borderRadius: const BorderRadius.only(
+                topLeft: Radius.circular(45), topRight: Radius.circular(45)),
+            child: url == null
+                ? const FadeInImage(
+                    placeholder: AssetImage('images/jar-loading.gif'),
+                    image: AssetImage('images/no-image.png'),
+                    //Rellena todo el hueco aunque sea la imagen de menor resolucion
+                    fit: BoxFit.cover,
+                  )
+                : FadeInImage(
+                    placeholder: const AssetImage('images/jar-loading.gif'),
+                    image: NetworkImage(url!),
+                    //Rellena todo el hueco aunque sea la imagen de menor resolucion
+                    
+                    fit: BoxFit.cover,
+                  ),
+          ),
         ),
       ),
     );
   }
 
   BoxDecoration _buildBoxDecoration() => BoxDecoration(
+        color: Colors.black,
         borderRadius: const BorderRadius.only(
             topLeft: Radius.circular(45), topRight: Radius.circular(45)),
         boxShadow: [
