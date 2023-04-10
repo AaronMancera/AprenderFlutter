@@ -109,13 +109,14 @@ class _ProductForm extends StatelessWidget {
                 initialValue: '${product.price}',
                 //Expresion regular obligatoria para los precios (only numbers and only two decimals)
                 inputFormatters: [
-                  FilteringTextInputFormatter.allow(RegExp(r'^(\d+)?\.?\d{0,2}'))
+                  FilteringTextInputFormatter.allow(
+                      RegExp(r'^(\d+)?\.?\d{0,2}'))
                 ],
                 onChanged: (value) {
-                  if (double.tryParse(value)==null){
-                    product.price=0;
-                  } else{
-                    product.price=double.parse(value);
+                  if (double.tryParse(value) == null) {
+                    product.price = 0;
+                  } else {
+                    product.price = double.parse(value);
                   }
                 },
                 keyboardType: TextInputType.number,
@@ -127,9 +128,7 @@ class _ProductForm extends StatelessWidget {
               ),
               SwitchListTile(
                 value: product.available,
-                onChanged: (value) {
-                  //TODO: Pendiente
-                },
+                onChanged: (value) => productForm.updateAvailability(value),
                 title: const Text('Disponible'),
                 activeColor: Colors.indigo,
               ),
