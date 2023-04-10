@@ -55,6 +55,15 @@ class _Products extends StatelessWidget {
                         color: Colors.white, size: 40),
                     onPressed: () => Navigator.of(context).pop(),
                   ),
+                ),
+                Positioned(
+                  top: 60,
+                  right: 20,
+                  child: IconButton(
+                    onPressed: () {
+                    }, 
+                    icon: const Icon( Icons.camera_alt_outlined, size: 40, color: Colors.white ),
+                  )
                 )
               ],
             ),
@@ -65,6 +74,11 @@ class _Products extends StatelessWidget {
             )
           ],
         ),
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.endDocked,
+      floatingActionButton: FloatingActionButton(
+        child: Icon( Icons.save_outlined ),
+        onPressed: () {},
       ),
     );
   }
