@@ -27,6 +27,7 @@ class Product {
     this.image,
     required this.name,
     required this.price,
+    this.id,
   });
 
   bool available;
@@ -52,4 +53,13 @@ class Product {
         "name": name,
         "price": price,
       };
+  //metodod de copiado de un producto a otro (mostrar  al selecionar producto)
+  Product copy() => Product(
+    available: available,
+    image: image,
+    name: name,
+    price: price,
+    id:id,
+    
+  );
 }
