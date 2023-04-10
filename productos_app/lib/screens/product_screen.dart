@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:productos_app/services/products_services.dart';
 import 'package:productos_app/ui/input_decorations.dart';
 import 'package:productos_app/widgets/widgets.dart';
@@ -106,6 +107,10 @@ class _ProductForm extends StatelessWidget {
               ),
               TextFormField(
                 initialValue: '${product.price}',
+                //Expresion regular obligatoria para los precios (only numbers and only two decimals)
+                inputFormatters: [
+                  FilteringTextInputFormatter.allow(RegExp(r'^(\d+)?\.?\d{0,2}'))
+                ],
                 onChanged: (value) {
                   if (double.tryParse(value)==null){
                     product.price=0;
